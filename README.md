@@ -70,7 +70,7 @@ Ce laboratoire utilise docker-compose, un outil pour la gestion d'applications u
 Nous allons commencer par lancer docker-compose. Il suffit de taper la commande suivante dans le répertoire racine du labo, celui qui contient le fichier [docker-compose.yml](docker-compose.yml). Optionnellement vous pouvez lancer le script [up.sh](scripts/up.sh) qui se trouve dans le répertoire [scripts](scripts), ainsi que d'autres scripts utiles pour vous :
 
 ```bash
-docker-compose up --detach
+docker compose up -d
 ```
 
 Le téléchargement et génération des images prend peu de temps.
@@ -78,28 +78,28 @@ Le téléchargement et génération des images prend peu de temps.
 Les images utilisées pour les conteneurs client et la machine IDS sont basées sur l'image officielle Kali. Le fichier [Dockerfile](Dockerfile) que vous avez téléchargé contient les informations nécessaires pour la génération de l'image de base. [docker-compose.yml](docker-compose.yml) l'utilise comme un modèle pour générer ces conteneurs. Les autres deux conteneurs utilisent des images du groupe LinuxServer.io. Vous pouvez vérifier que les quatre conteneurs sont crées et qu'ils fonctionnent à l'aide de la commande suivante.
 
 ```bash
-docker ps
+docker compose ps
 ```
 
 ## Communication avec les conteneurs
 
 Afin de simplifier vos manipulations, les conteneurs ont été configurées avec les noms suivants :
 
-- IDS
-- Client
+- ids
+- client
 - wireshark
 - firefox
 
 Pour accéder au terminal de l’une des machines, il suffit de taper :
 
 ```bash
-docker exec -it <nom_de_la_machine> /bin/bash
+docker compose exec bash
 ```
 
 Par exemple, pour ouvrir un terminal sur votre IDS :
 
 ```bash
-docker exec -it IDS /bin/bash
+docker compose exec ids bash
 ```
 
 Vous pouvez bien évidemment lancer des terminaux communiquant avec toutes les machines en même temps ou même lancer plusieurs terminaux sur la même machine. ***Il est en fait conseillé pour ce laboratoire de garder au moins deux terminaux ouverts sur la machine IDS en tout moment***.
@@ -404,6 +404,12 @@ Utiliser nano ou vim pour créer un fichier `myrules.rules` sur votre répertoir
 
 ```
 snort -c myrules.rules -i eth0
+```
+
+Pour certaines installations docker, il faut plutôt utiliser ceci:
+
+```
+snort -c myrules.rules -P 65535 -k none
 ```
 
 **Question 4: Que voyez-vous quand le logiciel est lancé ? Qu'est-ce que tous ces messages affichés veulent dire ?**

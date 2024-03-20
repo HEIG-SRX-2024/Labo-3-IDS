@@ -2,9 +2,9 @@ version: '3.7'
 
 services:
     ids:
-        hostname: 'IDS'
+        hostname: ids
         privileged: true
-        container_name : IDS
+        container_name: ids
         image: srx-labo-3
         build: .
         cap_add : 
@@ -27,9 +27,9 @@ services:
             net.ipv4.conf.eth0.send_redirects: '0'
 
     client:
-        hostname: 'Client'
+        hostname: client
         privileged: true
-        container_name : Client
+        container_name: client
         image: srx-labo-3
         build: .
         cap_add : 
@@ -51,7 +51,7 @@ services:
 
     wireshark:
         image: lscr.io/linuxserver/wireshark
-        container_name: wireshark
+        container_name: Wireshark
         cap_add:
             - NET_ADMIN
         volumes:
@@ -66,7 +66,7 @@ services:
         restart: unless-stopped
 
     firefox:
-        hostname: 'firefox'
+        hostname: firefox
         image: lscr.io/linuxserver/firefox
         container_name: firefox
         environment:
