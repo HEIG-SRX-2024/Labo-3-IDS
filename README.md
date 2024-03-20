@@ -360,7 +360,7 @@ Les fichiers log sont des fichiers binaires enregistrés en format pcap. Vous po
 tcpdump -r /var/log/snort/snort.log.xxxxxxxxxx
 ```
 
-Vous pouvez aussi utiliser des captures Wireshark ou des fichiers snort.log.xxxxxxxxx comme source d'analyse por Snort.
+Vous pouvez aussi utiliser des captures Wireshark ou des fichiers snort.log.xxxxxxxxx comme source d'analyse pour Snort.
 
 ## Exercises
 
