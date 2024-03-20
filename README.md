@@ -700,4 +700,4 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 ---
 
-<sub>This guide draws heavily on http://cs.mvnu.edu/twiki/bin/view/Main/CisLab82014</sub>
+<sub>This guide draws heavily on https://web.archive.org/web/20190419040733/http://cs.mvnu.edu/twiki/bin/view/Main/CisLab82014</sub>
