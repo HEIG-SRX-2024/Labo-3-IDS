@@ -1,4 +1,4 @@
-# HEIGVD - Sécurité des Réseaux - 2023
+# HEIGVD - Sécurité des Réseaux - 2024
 # Laboratoire n°3 - IDS
 
 Ce travail est à réaliser en équipes de deux personnes.
@@ -34,12 +34,12 @@ Le rendu consiste simplement à compléter toutes les parties marquées avec la 
 
 ## Echéance
 
-Ce travail devra être rendu au plus tard, **le 2 avril 2023 à 23h59.**
+Ce travail devra être rendu au plus tard, **le 10 avril 2024 à 23h59.**
 
 
 ## Introduction
 
-Dans ce travail de laboratoire, vous allez explorer un système de détection contre les intrusions (IDS) dont l'utilisation es très répandue grâce au fait qu'il est très performant tout en étant gratuit et open source. Il s'appelle [Snort](https://www.snort.org). Il existe des versions de Snort pour Linux et pour Windows.
+Dans ce travail de laboratoire, vous allez explorer un système de détection contre les intrusions (IDS) dont l'utilisation est très répandue grâce au fait qu'il est très performant tout en étant gratuit et open source. Il s'appelle [Snort](https://www.snort.org). Il existe des versions de Snort pour Linux et pour Windows.
 
 ### Les systèmes de détection d'intrusion
 
@@ -67,7 +67,7 @@ Ce laboratoire utilise docker-compose, un outil pour la gestion d'applications u
 
 ![Plan d'adressage](images/docker-snort.png)
 
-Nous allons commencer par lancer docker-compose. Il suffit de taper la commande suivante dans le répertoire racine du labo, celui qui contient le fichier [docker-compose.yml](docker-compose.yml). Optionnelement vous pouvez lancer le script [up.sh](scripts/up.sh) qui se trouve dans le répertoire [scripts](scripts), ainsi que d'autres scripts utiles pour vous :
+Nous allons commencer par lancer docker-compose. Il suffit de taper la commande suivante dans le répertoire racine du labo, celui qui contient le fichier [docker-compose.yml](docker-compose.yml). Optionnellement vous pouvez lancer le script [up.sh](scripts/up.sh) qui se trouve dans le répertoire [scripts](scripts), ainsi que d'autres scripts utiles pour vous :
 
 ```bash
 docker-compose up --detach
@@ -168,7 +168,7 @@ Snort s'éxecute donc et montre sur l'écran tous les entêtes des paquets IP qu
 
 Pour arrêter Snort, il suffit d'utiliser `CTRL-C`.
 
-**attention** : généralement, ceci fonctionne si vous patientez un moment... Snort est occupé en train de gérer le contenu du tampon de communication et cela qui peut durer quelques secondes. Cependant, il peut arriver de temps à autres que Snort ne réponde plus correctement au signal d'arrêt. Dans ce cas-là on peut utliliser `CTRL-Z`, puis lancer la commande `pkill -f -9 snort`.
+**attention** : généralement, vous devez patienter un moment avant que Snort s'arrête... Snort doit d'abbord finir de gérer le contenu du tampon de communication, ce qui peut prendre quelques secondes. Cependant, il peut arriver de temps à autres que Snort ne réponde plus correctement au signal d'arrêt. Dans ce cas-là on peut utliliser `CTRL-Z`, puis lancer la commande `pkill -f -9 snort`.
 
 
 ## Utilisation comme un IDS
