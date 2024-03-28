@@ -34,7 +34,7 @@ Le rendu consiste simplement à compléter toutes les parties marquées avec la 
 
 ## Echéance
 
-Ce travail devra être rendu au plus tard, **le 10 avril 2024 à 23h59.**
+Ce travail devra être rendu au plus tard, **le 17 avril 2024 à 23h59.**
 
 
 ## Introduction
